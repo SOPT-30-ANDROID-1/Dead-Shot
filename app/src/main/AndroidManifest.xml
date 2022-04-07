@@ -10,6 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Sopt_Study">
         <activity
+            android:name=".HomeActivity"
+            android:exported="false"
+            android:label="@string/title_activity_home"
+            android:theme="@style/Theme.Sopt_Study.NoActionBar" />
+        <activity
+            android:name=".SignUpActivity"
+            android:exported="false"
+            android:label="@string/title_activity_sign_up"
+            android:theme="@style/Theme.Sopt_Study.NoActionBar" />
+        <activity
             android:name=".EmptyActivity"
             android:exported="false" />
         <activity
