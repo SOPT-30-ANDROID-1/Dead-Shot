@@ -181,7 +181,7 @@ C:\Users\gua05\AppData\Local\Android\Sdk\platforms\android-32\data\res\mipmap-hd
 ![메인화면_토스트](./github_image/메인화면_토스트.png)
 
 ### 홈 화면
-![홈 화면](./github_image/홈 화면.png)
+![홈_화면](./github_image/홈_화면.png)
 
 ### 회원가입 실패
-![회원가입 실패](./github_image/회원가입 실패.png)
+![회원가입_실패](./github_image/회원가입_실패.png)
