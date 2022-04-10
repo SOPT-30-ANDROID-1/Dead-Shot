@@ -171,3 +171,17 @@ Activity_home 레이아웃 파일과 연결시킬 binding 변수를 만들어 �
 ```
 activity_home 에 쓰인 ImageView에 대한 코드 입니다.
 C:\Users\gua05\AppData\Local\Android\Sdk\platforms\android-32\data\res\mipmap-hdpi\sym_def_app_icon.png 에 있는 이미지 파일을 프로필 사진으로서 활용 하였습니다.
+
+## 프로그램 실행 화면
+
+### 메인화면
+![메인화면](./github_image/메인화면.png)
+
+### 메인화면_토스트
+![메인화면_토스트](./github_image/메인화면_토스트.png)
+
+### 홈 화면
+![홈 화면](./github_image/홈 화면.png)
+
+### 회원가입 실패
+![회원가입 실패](./github_image/회원가입 실패.png)
