@@ -10,7 +10,7 @@
 # 1차 세미나
 
 2022.04.08 - 필수 과제 완료 후 readme 작성!
-
+2022.04.10 - readme 완료!
 ## 주요 코드 설명
 
 ### SignInActivity, activity_main (초기 화면이므로 xml 이름을 수정하지 않았음)
