@@ -1,17 +1,14 @@
 package com.example.sopt_study
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.example.sopt_study.databinding.ActivityHomeBinding
 
 
 class HomeActivity : AppCompatActivity() {
-    private lateinit var binding : ActivityHomeBinding
+    private lateinit var binding: ActivityHomeBinding
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
-
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
     }
