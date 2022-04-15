@@ -54,26 +54,35 @@
         app:layout_constraintTop_toBottomOf="@id/textView_age" />
 
     <Button
-        android:id="@+id/follower"
+        android:id="@+id/btnFollower"
         android:layout_width="160dp"
         android:layout_height="80dp"
         android:layout_marginTop="20dp"
         android:text="팔로워\n목록"
 
-        app:layout_constraintEnd_toStartOf="@id/repository"
+        app:layout_constraintEnd_toStartOf="@id/btnRepository"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/mbti_container" />
 
     <Button
-        android:id="@+id/repository"
+        android:id="@+id/btnRepository"
         android:layout_width="160dp"
         android:layout_height="80dp"
         android:layout_marginTop="20dp"
         android:text="레포지토리\n목록"
 
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/follower"
+        app:layout_constraintStart_toEndOf="@id/btnFollower"
         app:layout_constraintTop_toBottomOf="@id/mbti_container" />
+
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnRepository" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

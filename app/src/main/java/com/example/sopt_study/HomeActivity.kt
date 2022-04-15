@@ -11,5 +11,36 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        initTransactionEvent()
+
+
+    }
+
+
+    private fun initTransactionEvent() {
+        val followerPage = FollowerPageFragment()
+        val repositoryPage = RepositoryPageFragment()
+
+        supportFragmentManager.beginTransaction().add(R.id.fragment_container, followerPage)
+            .commit()
+
+
+        binding.btnFollower.setOnClickListener {
+
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, followerPage).commit()
+
+
+        }
+
+        binding.btnRepository.setOnClickListener {
+
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, repositoryPage).commit()
+
+        }
     }
 }
+
+
