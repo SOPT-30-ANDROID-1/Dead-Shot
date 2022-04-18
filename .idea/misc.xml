@@ -3,12 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/dn7638/AndroidStudioProjects/Seminar2_SOPT/Dead-Shot/app/src/main/res/drawable/round_angle.xml" value="0.238" />
         <entry key="..\:/Users/dn7638/AndroidStudioProjects/Seminar2_SOPT/Dead-Shot/app/src/main/res/layout/activity_home.xml" value="0.22" />
         <entry key="..\:/Users/dn7638/AndroidStudioProjects/Seminar2_SOPT/Dead-Shot/app/src/main/res/layout/activity_main.xml" value="0.4166666666666667" />
         <entry key="..\:/Users/dn7638/AndroidStudioProjects/Seminar2_SOPT/Dead-Shot/app/src/main/res/layout/activity_sign_up.xml" value="0.3277777777777778" />
         <entry key="..\:/Users/dn7638/AndroidStudioProjects/Seminar2_SOPT/Dead-Shot/app/src/main/res/layout/fragment_follower_page.xml" value="0.25" />
-        <entry key="..\:/Users/dn7638/AndroidStudioProjects/Seminar2_SOPT/Dead-Shot/app/src/main/res/layout/fragment_repository_page.xml" value="0.25" />
-        <entry key="..\:/Users/dn7638/AndroidStudioProjects/Seminar2_SOPT/Dead-Shot/app/src/main/res/layout/user_list.xml" value="0.25" />
+        <entry key="..\:/Users/dn7638/AndroidStudioProjects/Seminar2_SOPT/Dead-Shot/app/src/main/res/layout/fragment_page_follower.xml" value="0.22" />
+        <entry key="..\:/Users/dn7638/AndroidStudioProjects/Seminar2_SOPT/Dead-Shot/app/src/main/res/layout/fragment_page_repository.xml" value="0.4083333333333333" />
+        <entry key="..\:/Users/dn7638/AndroidStudioProjects/Seminar2_SOPT/Dead-Shot/app/src/main/res/layout/fragment_repository_page.xml" value="0.33" />
+        <entry key="..\:/Users/dn7638/AndroidStudioProjects/Seminar2_SOPT/Dead-Shot/app/src/main/res/layout/repository_list.xml" value="0.33" />
+        <entry key="..\:/Users/dn7638/AndroidStudioProjects/Seminar2_SOPT/Dead-Shot/app/src/main/res/layout/user_list.xml" value="0.33" />
         <entry key="..\:/Users/gua05/AndroidStudioProjects/Sopt_Study/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1415" />
         <entry key="..\:/Users/gua05/AndroidStudioProjects/Sopt_Study/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1415" />
         <entry key="..\:/Users/gua05/AndroidStudioProjects/Sopt_Study/app/src/main/res/layout/activity_home.xml" value="0.176" />

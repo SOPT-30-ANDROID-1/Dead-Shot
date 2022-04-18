@@ -6,34 +6,20 @@
     android:layout_marginVertical="50dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:paddingVertical="10dp"
-    android:background="@drawable/round_angle">
-
-
-    <ImageView
-        android:id="@+id/image_profile"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:src="@mipmap/ic_launcher_round"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth_percent="0.25" />
+    android:paddingVertical="10dp">
 
     <TextView
         android:id="@+id/text_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:ellipsize="end"
         android:textColor="@color/black"
         android:textSize="20sp"
-        android:ellipsize="end"
+        android:layout_marginStart="15dp"
 
-        app:layout_constraintStart_toEndOf="@id/image_profile"
-        app:layout_constraintTop_toTopOf="@id/image_profile"
-        tools:text="이름"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="이름" />
 
     <TextView
         android:id="@+id/text_introduce"
@@ -42,12 +28,16 @@
         android:ellipsize="end"
         android:maxLines="2"
         android:textColor="@color/black"
+
+
         android:textSize="15sp"
-
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/text_name"
-        app:layout_constraintTop_toBottomOf="@id/text_name"
-        tools:text="1가나다라2가아자 카" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        android:paddingHorizontal="10dp"
 
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_name"
+        tools:text="자기 소개 텍스트 입니다.자기 소개 텍스트 입니다.자기 소개 텍스트 입니다." />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
