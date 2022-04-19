@@ -6,7 +6,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".FollowerPageFragment">
 
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_follower"
         android:layout_width="match_parent"
@@ -14,5 +13,5 @@
 
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:itemCount="4"
-        tools:listitem="@layout/user_list"/>
+        tools:listitem="@layout/user_list" />
 </FrameLayout>

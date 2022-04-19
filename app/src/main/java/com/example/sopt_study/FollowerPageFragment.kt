@@ -35,11 +35,11 @@ class FollowerPageFragment : Fragment() {
     }
 
     private fun initAdapter(){
-        val myDecoration = MyDecoration(200f, 200f, Color.BLUE)
+        val myDecoration = MyDecoration(10f, 20f, Color.BLUE)
 
         followerAdapter = FollowerAdapter()
         binding.rvFollower.adapter = followerAdapter
-        binding.rvFollower.addItemDecoration(myDecoration)
+
 
 
 
