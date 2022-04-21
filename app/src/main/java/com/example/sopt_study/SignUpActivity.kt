@@ -9,10 +9,8 @@ class SignUpActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySignUpBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = ActivitySignUpBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         binding.finishSignUpButton.setOnClickListener {
             val name = binding.EditTextName.text.toString()
             val id = binding.editTextId.text.toString()

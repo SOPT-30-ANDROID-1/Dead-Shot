@@ -5,7 +5,6 @@ import androidx.recyclerview.widget.RecyclerView
 import android.view.ViewGroup
 import com.example.sopt_study.databinding.RepositoryListBinding
 
-
 class RepositoryAdapter : RecyclerView.Adapter<RepositoryAdapter.RepositoryViewHolder>() {
 
     val userList = mutableListOf<UserData>()
@@ -31,6 +30,4 @@ class RepositoryAdapter : RecyclerView.Adapter<RepositoryAdapter.RepositoryViewH
             binding.textIntroduce.text = data.introduction
         }
     }
-
-
 }

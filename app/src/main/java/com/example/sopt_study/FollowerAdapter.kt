@@ -31,6 +31,4 @@ class FollowerAdapter : RecyclerView.Adapter<FollowerAdapter.FollowerViewHolder>
             binding.textIntroduce.text = data.introduction
         }
     }
-
-
 }

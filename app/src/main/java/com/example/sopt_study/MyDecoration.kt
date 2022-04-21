@@ -25,7 +25,6 @@ class MyDecoration(
         for (i in 0 until parent.childCount) {
             val child = parent.getChildAt(i)
             val params = child.layoutParams as RecyclerView.LayoutParams
-
             val top = (child.bottom + params.bottomMargin).toFloat()
             val bottom = top + height
             c.drawRect (left, top, right, bottom, paint)

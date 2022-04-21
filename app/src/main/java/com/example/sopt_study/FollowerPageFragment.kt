@@ -16,15 +16,11 @@ class FollowerPageFragment : Fragment() {
     private var _binding: FragmentFollowerPageBinding? = null
     private val binding get() = _binding!!
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentFollowerPageBinding.inflate(layoutInflater, container, false)
-
-
-
         initAdapter()
         return binding.root
     }
@@ -36,13 +32,10 @@ class FollowerPageFragment : Fragment() {
 
     private fun initAdapter(){
         val myDecoration = MyDecoration(10f, 20f, Color.BLUE)
+        //사용하고자 하였음..
 
         followerAdapter = FollowerAdapter()
         binding.rvFollower.adapter = followerAdapter
-
-
-
-
         followerAdapter.userList.addAll(
             listOf(
                 UserData("이강민", "1가나다라마바사아자차카타파하2가나다라마바사아자차카타파하3가나다라마바사아자차카타파하4가나다라마바사아자차카타파하5가나다라마바사아자차카타파하6"),
