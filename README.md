@@ -2,13 +2,12 @@
 
 > 잊지마, 우린 나쁜놈들이야.
 
-<img src="https://user-images.githubusercontent.com/33388801/161442839-c1bdc8da-0c91-4ee5-9c45-22b953b53136.png" width=250/>
 
 # 2차 세미나
 
 ## 프로그램 실행 화면
 
-![recyclerview_record2](https://user-images.githubusercontent.com/48896148/164514023-560962bd-31c2-43ab-9f71-6439885f7617.gif)
+![ezgif-5-a8f2f94471](https://user-images.githubusercontent.com/48896148/164515126-55d7d37c-50cd-4187-ac17-55ba043da67c.gif)
 
 ## 주요 코드 설명
 
