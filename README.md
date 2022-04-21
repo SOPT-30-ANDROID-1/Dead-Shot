@@ -53,7 +53,7 @@ class FollowerPageFragment : Fragment() {
 ````
 * 프레그먼트에 위치한 리사이클러뷰에 어댑터를 init 시켜주는 함수 initAdapter()에 주목
 * 어댑터를 초기화 하고, FollwerPageFragment의 레이아웃 xml파일을 binding을 통해 참조함.
-* 어댑터에 데이터 클래스에 맞추어, 넣고자 하는 데이터를 add해줌
+* 어댑터에에서 데이터 클래스 형태에 맞는, 넣고자 하는 데이터를 add해줌
 
 ### fragment_follower_page.xml
 ``` kotlin
