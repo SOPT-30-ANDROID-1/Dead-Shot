@@ -114,7 +114,7 @@ class FollowerAdapter : RecyclerView.Adapter<FollowerAdapter.FollowerViewHolder>
 * 뷰홀더는 미리 만들어논 레이아웃과 데이터를 띄워주는 역할을 한다.
 * 어댑터에서는 뷰홀더에 데이터를 바인딩 시킨다!
 
-###round_angel.xml
+### round_angel.xml
 ```kotlin
 <?xml version="1.0" encoding="utf-8"?>
 
