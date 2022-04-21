@@ -8,7 +8,7 @@
 
 ## 프로그램 실행 화면
 
-![recyclerview_record](https://user-images.githubusercontent.com/48896148/164504236-22c7ad73-1eca-429f-8184-d89524fe2b57.gif)
+![recyclerview_record2](https://user-images.githubusercontent.com/48896148/164514023-560962bd-31c2-43ab-9f71-6439885f7617.gif)
 
 ## 주요 코드 설명
 
