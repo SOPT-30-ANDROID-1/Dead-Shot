@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">3rd_seminar</string>
     <string name="string_password">비밀번호</string>
-    <string name="login_button_string">로그인</string>
-    <string name="password_button_string">비밀번호</string>
+    <string name="string_login">로그인</string>
+    <string name="string_name">이름</string>
+    <string name="string_github_id">깃허브 아이디</string>
+    <string name="string_signup">회원가입</string>
+
+
 </resources>
