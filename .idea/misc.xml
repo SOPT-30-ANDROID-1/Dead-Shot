@@ -3,13 +3,31 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/dn7638/AndroidStudioProjects/seminar3/app/src/main/res/drawable/button_selector.xml" value="0.1355" />
+        <entry key="..\:/Users/dn7638/AndroidStudioProjects/seminar3/app/src/main/res/drawable/button_text_selector.xml" value="0.1355" />
         <entry key="..\:/Users/dn7638/AndroidStudioProjects/seminar3/app/src/main/res/drawable/default_edit_text_background.xml" value="0.194" />
         <entry key="..\:/Users/dn7638/AndroidStudioProjects/seminar3/app/src/main/res/drawable/ic_launcher_background.xml" value="0.194" />
+        <entry key="..\:/Users/dn7638/AndroidStudioProjects/seminar3/app/src/main/res/drawable/ic_option.xml" value="0.1355" />
+        <entry key="..\:/Users/dn7638/AndroidStudioProjects/seminar3/app/src/main/res/drawable/ic_profile_gray.xml" value="0.1355" />
         <entry key="..\:/Users/dn7638/AndroidStudioProjects/seminar3/app/src/main/res/drawable/round_angle_button.xml" value="0.194" />
+        <entry key="..\:/Users/dn7638/AndroidStudioProjects/seminar3/app/src/main/res/drawable/round_angle_button_non_selected.xml" value="0.1355" />
+        <entry key="..\:/Users/dn7638/AndroidStudioProjects/seminar3/app/src/main/res/drawable/round_angle_button_selected.xml" value="0.1355" />
         <entry key="..\:/Users/dn7638/AndroidStudioProjects/seminar3/app/src/main/res/drawable/round_angle_password_button.xml" value="0.194" />
+        <entry key="..\:/Users/dn7638/AndroidStudioProjects/seminar3/app/src/main/res/drawable/selector_button.xml" value="0.1355" />
         <entry key="..\:/Users/dn7638/AndroidStudioProjects/seminar3/app/src/main/res/layout/activity_home.xml" value="0.25" />
         <entry key="..\:/Users/dn7638/AndroidStudioProjects/seminar3/app/src/main/res/layout/activity_sign_in.xml" value="0.33" />
         <entry key="..\:/Users/dn7638/AndroidStudioProjects/seminar3/app/src/main/res/layout/activity_sign_up.xml" value="0.33" />
+        <entry key="..\:/Users/dn7638/AndroidStudioProjects/seminar3/app/src/main/res/layout/fragment_camera.xml" value="0.31302083333333336" />
+        <entry key="..\:/Users/dn7638/AndroidStudioProjects/seminar3/app/src/main/res/layout/fragment_home.xml" value="0.4166666666666667" />
+        <entry key="..\:/Users/dn7638/AndroidStudioProjects/seminar3/app/src/main/res/layout/fragment_home_follower.xml" value="0.5" />
+        <entry key="..\:/Users/dn7638/AndroidStudioProjects/seminar3/app/src/main/res/layout/fragment_home_repository.xml" value="0.275" />
+        <entry key="..\:/Users/dn7638/AndroidStudioProjects/seminar3/app/src/main/res/layout/fragment_home_tab1.xml" value="0.31354166666666666" />
+        <entry key="..\:/Users/dn7638/AndroidStudioProjects/seminar3/app/src/main/res/layout/fragment_home_tab2.xml" value="0.31354166666666666" />
+        <entry key="..\:/Users/dn7638/AndroidStudioProjects/seminar3/app/src/main/res/layout/fragment_profile.xml" value="0.275" />
+        <entry key="..\:/Users/dn7638/AndroidStudioProjects/seminar3/app/src/main/res/layout/fragment_profile_follower.xml" value="0.31302083333333336" />
+        <entry key="..\:/Users/dn7638/AndroidStudioProjects/seminar3/app/src/main/res/layout/fragment_profile_repository.xml" value="0.31302083333333336" />
+        <entry key="..\:/Users/dn7638/AndroidStudioProjects/seminar3/app/src/main/res/layout/item_follower_list.xml" value="0.9" />
+        <entry key="..\:/Users/dn7638/AndroidStudioProjects/seminar3/app/src/main/res/layout/item_repository_list.xml" value="0.25" />
         <entry key="..\:/Users/dn7638/AndroidStudioProjects/seminar3/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1465" />
         <entry key="..\:/Users/gua05/AndroidStudioProjects/3rd_seminar/app/src/main/res/drawable/default_edit_text_background.xml" value="0.126" />
         <entry key="..\:/Users/gua05/AndroidStudioProjects/3rd_seminar/app/src/main/res/drawable/ic_home_gary.xml" value="0.259" />
