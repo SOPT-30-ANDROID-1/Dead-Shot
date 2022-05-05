@@ -53,4 +53,20 @@
         </item>
 
     </style>
+
+    <style name="text_style_user_name">
+
+        <item name="android:textSize">
+            20sp
+        </item>
+
+        <item name="android:textColor">
+            #FFFFFF
+        </item>
+
+        <item name="android:textStyle">
+        bold
+        </item>
+
+    </style>
 </resources>

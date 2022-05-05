@@ -6,4 +6,24 @@
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
 
+
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vp_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bnv_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/sopt_white"
+        app:itemIconTint="@color/selector_bottom_navi"
+        app:itemRippleColor="@color/sopt_main_purple"
+        app:itemTextColor="@color/selector_bottom_navi"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/menu_main" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,13 +12,21 @@
         <entry key="..\:/Users/dn7638/AndroidStudioProjects/seminar3/app/src/main/res/layout/activity_sign_up.xml" value="0.33" />
         <entry key="..\:/Users/dn7638/AndroidStudioProjects/seminar3/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1465" />
         <entry key="..\:/Users/gua05/AndroidStudioProjects/3rd_seminar/app/src/main/res/drawable/default_edit_text_background.xml" value="0.126" />
+        <entry key="..\:/Users/gua05/AndroidStudioProjects/3rd_seminar/app/src/main/res/drawable/ic_home_gary.xml" value="0.259" />
         <entry key="..\:/Users/gua05/AndroidStudioProjects/3rd_seminar/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1235" />
+        <entry key="..\:/Users/gua05/AndroidStudioProjects/3rd_seminar/app/src/main/res/drawable/ic_profile.xml" value="0.2585" />
+        <entry key="..\:/Users/gua05/AndroidStudioProjects/3rd_seminar/app/src/main/res/drawable/ic_profile_gray.xml" value="0.259" />
         <entry key="..\:/Users/gua05/AndroidStudioProjects/3rd_seminar/app/src/main/res/drawable/round_angle.xml" value="0.1" />
         <entry key="..\:/Users/gua05/AndroidStudioProjects/3rd_seminar/app/src/main/res/drawable/round_angle_button.xml" value="0.259" />
-        <entry key="..\:/Users/gua05/AndroidStudioProjects/3rd_seminar/app/src/main/res/layout/activity_home.xml" value="0.2" />
+        <entry key="..\:/Users/gua05/AndroidStudioProjects/3rd_seminar/app/src/main/res/layout/activity_home.xml" value="0.264" />
         <entry key="..\:/Users/gua05/AndroidStudioProjects/3rd_seminar/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/gua05/AndroidStudioProjects/3rd_seminar/app/src/main/res/layout/activity_sign_in.xml" value="0.8" />
         <entry key="..\:/Users/gua05/AndroidStudioProjects/3rd_seminar/app/src/main/res/layout/activity_sign_up.xml" value="0.11510416666666666" />
+        <entry key="..\:/Users/gua05/AndroidStudioProjects/3rd_seminar/app/src/main/res/layout/fragment_camera.xml" value="0.1" />
+        <entry key="..\:/Users/gua05/AndroidStudioProjects/3rd_seminar/app/src/main/res/layout/fragment_home.xml" value="0.16799999999999998" />
+        <entry key="..\:/Users/gua05/AndroidStudioProjects/3rd_seminar/app/src/main/res/layout/fragment_home_follower.xml" value="0.264" />
+        <entry key="..\:/Users/gua05/AndroidStudioProjects/3rd_seminar/app/src/main/res/layout/fragment_profile.xml" value="0.1" />
+        <entry key="..\:/Users/gua05/AndroidStudioProjects/3rd_seminar/app/src/main/res/menu/menu_main.xml" value="0.2" />
       </map>
     </option>
   </component>
