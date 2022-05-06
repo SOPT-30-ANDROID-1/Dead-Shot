@@ -138,61 +138,6 @@ https://user-images.githubusercontent.com/48896148/167121996-c61a9cd8-85cc-47b9-
 
 ### 3. HomeFragment
 
-2. 로그인 버튼, 회원 가입 버튼 클릭시 작동하는 SignInActivity의 코드
-``` Kotlin
-class MainActivity : AppCompatActivity() {
-    private lateinit var binding : ActivityMainBinding
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-        binding.logInButton.setOnClickListener{
-
-            val id = binding.editTextId.text.toString()
-            val password = binding.editTextPassword.text.toString()
-
-            //항목을 다 채우지 않았을 경우 토스트 메시지 띄우기
-            if(id.isEmpty() || password.isEmpty() ){
-                Toast.makeText(this, "아이디/비밀번호를 확인해 주세요", Toast.LENGTH_SHORT).show()
-            }
-            //다 채워진 경우 HomeActivity 로 이동
-            else{
-                Toast.makeText(this, "로그인 성공", Toast.LENGTH_SHORT).show()
-                val intent = Intent(this, HomeActivity::class.java)
-                startActivity(intent)
-            }
-        }
-        binding.signUpButton.setOnClickListener {
-        val intent = Intent(this, SignUpActivity::class.java)
-        startActivity(intent)
-        }
-    }
-}
-```
-ActivityMainBinding으로부터 binding 객체를 생성합니다.
-logInButton에 리스너를 달아줍니다.
-id, password 변수를 만들고 채워져 있는 텍스트를 확인하는 코드를 if함수를 이용하여 작성하였음.
-
-signButton에 리스너를 달아줍니다.
-Intent 를 통해 signUpActivity를 불러옵니다.
-
-
-#### 비밀번호를 적는 EditTextView에서 입력 내용 가리기
-``` Kotlin
-android:inputType="textPassword"
-```
-EditText 레이아웃 작성시 위 코드를 추가하여 입력 내용을 가려줍니다.
-
-#### EditTextView에 미리보기 글씨 넣기
-``` Kotlin
-android:hint="비밀번호를 입력해 주세요."
-```
-EditText 레이아웃 작성시 위 코드를 추가하여 미리보기 글씨를 넣어 줍니다.
-
-### SignUpActivity, activity_sign_up
-
 1) TabLayout과 ViewPager2
 
 ```kotlin
