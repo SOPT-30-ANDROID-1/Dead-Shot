@@ -7,47 +7,136 @@
 
 
 
-# 1차 세미나
+# 3차 세미나
 
-2022.04.08 - 필수 과제 완료 후 readme 작성!
+## 프로그램 실행 영상
 
-## 주요 코드 설명
+https://user-images.githubusercontent.com/48896148/167121996-c61a9cd8-85cc-47b9-93d1-8bc5f0121e02.mp4
 
-### SignInActivity, activity_main (초기 화면이므로 xml 이름을 수정하지 않았음)
+## 필수과제
 
-#### 로그인 버튼 -> HomeActivity로 이동
-1.로그인 버튼 레이아웃
+### 1. font-family를 활용한 noto_sans_kr.xml
 ``` Kotlin
-    <Button
-        android:id="@+id/signUpButton"
-        android:layout_width="346dp"
-        android:layout_height="58dp"
-        android:layout_marginTop="30dp"
+<?xml version="1.0" encoding="utf-8"?>
+<font-family xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <font
+        android:font="@font/noto_sans_kr_small"
+        android:fontWeight="100"/>
 
-        android:backgroundTint="@color/MYGREEN"
+    <font
+        android:font="@font/noto_sans_kr_light"
+        android:fontWeight="200"/>
 
-        android:text="회원가입"
+    <font
+        android:font="@font/noto_sans_kr_regular"
+        android:fontWeight="300"/>
 
-        app:layout_constraintBottom_toBottomOf="parent"
+    <font
+        android:font="@font/noto_sans_kr_medium"
+        android:fontWeight="400"/>
+
+    <font
+        android:font="@font/noto_sans_kr_bold"
+        android:fontWeight="500"/>
+
+    <font
+        android:font="@font/noto_sans_kr_black"
+        android:fontWeight="600"/>
+
+</font-family>
+```
+굵기가 얇은 순서대로 fontWeight의 값을 100씩 키웠습니다.
+
+### 2. 기존 HomeActivity --> ProfileFragment 에 구현하기
+
+1) 어플 구획을 위하여 ConstraintLayout을 fragment안에 추가로 구성
+``` kotlin
+<androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_gray"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#444444"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logInButton"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:src="@drawable/ic_option"
+            app:layout_constraintStart_toEndOf="@id/iv_profile"
+            app:layout_constraintTop_toTopOf="@id/iv_profile" />
+
+
+        <ImageView
+            android:id="@+id/iv_profile"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="44dp"
+            android:src="@drawable/image_github"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="ChoiWooHyeong"
+            android:fontFamily="@font/noto_sans_kr_bold"
+            android:textAppearance="@style/text_style_user_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_profile" />
+
+        <TextView
+            android:id="@+id/tv_insta_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:text="\@vvoo__hyeong"
+            android:fontFamily="@font/noto_sans_kr_regular"
+            android:textColor="#DFDAED"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_profile" />
+
+        <TextView
+            android:id="@+id/tv_about_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:layout_marginBottom="15dp"
+            android:text="개발자 꿈나무"
+            android:textColor="#8F8F8F"
+            android:fontFamily="@font/noto_sans_kr_medium"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_insta_id" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 ```
-버튼의 수평, 수직 크기는 비슷한 용도의 버튼들과 통일 되어 있습니다.
-네 방향의 제약 조건들도 위 코드와 같습니다.
-회원가입 버튼에는 '회원가입'이라는 텍스트가 들어가 있으며, 색상은 제가 추출한 초록색으로 변경 하였습니다. @color/MYGREEN을 values 하위 폴더에 myColor.xml 내에 정의 하여 활용 하였습니다. "@color/MYGREEN" 대신에 "#XXXXXX"(XX는 RGB값의 16진수 표현)를 활용할 수 있습니다.
+프레그먼트 내의 ImageView ~ 유저 소개용 TextView (개발자 꿈나무) 까지 새로운 레이아웃 내에 구현 후 배경 색상 바꿔주었음.
 
-``` Kotlin
-<resources>
-
-    <color name = "MYGREEN">#78C257</color>
-
-</resources>
+2) 버튼에 셀렉터 활용
+``` kotlin
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/round_angle_button_selected" android:state_selected="true" />
+    <item android:drawable="@drawable/round_angle_button_non_selected" android:state_selected="false"/>
+</selector>
 ```
-활용할 색상들을 직접 정의 한 후 활용할 수 있습니다.
-버튼들의 style, theme 등을 미리 지정해서 많이 사용될 버튼들을 편하게 만들 수 있습니다.
+위와 같은 background 요소를 만들어 주었음. 이전 시간에 만든 @drawable/round_angle_button에서 색상을 수정하여 selected, non_selected일때의 요소들을 만들어 버튼이 선택될 때와 아닐 때의 background를 구분해 주었습니다.
+
+3) 원형 이미지 활용하였으며, BottomNavigation 의 경우 Figma에서 svg를 export하여 구현하였습니다.
+(프로그램 실행 영상 참고)
+
+### 3. HomeFragment
 
 2. 로그인 버튼, 회원 가입 버튼 클릭시 작동하는 SignInActivity의 코드
 ``` Kotlin
@@ -104,84 +193,28 @@ EditText 레이아웃 작성시 위 코드를 추가하여 미리보기 글씨�
 
 ### SignUpActivity, activity_sign_up
 
-#### 회원가입 버튼 -> SignInActivity로 이동
-``` Kotlin
-class SignUpActivity : AppCompatActivity() {
-    private lateinit var binding : ActivitySignUpBinding
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+1) TabLayout과 ViewPager2
 
-
-        binding = ActivitySignUpBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-        binding.finishSignUpButton.setOnClickListener {
-
-            val name = binding.EditTextName.text.toString()
-            val id = binding.editTextId.text.toString()
-            val password = binding.editTextPassword.text.toSet()
-
-            //항목을 다 채우지 않았을 경우 토스트 메시지 띄우기
-            if(name.isEmpty() || id.isEmpty() || password.isEmpty() ){
-                Toast.makeText(this, "입력되지 않은 정보가 있습니다.", Toast.LENGTH_SHORT).show()
-            }
-
-            //다 채워진 경우 회원 가입 페이지 종료
-           else {
-                finish()
-            }
-        }
-
-    }
-}
-```
-MainActivity(파일명 SignInActivity)와 대부분 동일한 코드.
-이름을 적을 name변수 추가.
-
-### HomeActivity, activity_home
-
-#### HomeActivity
-``` Kotlin
-class HomeActivity : AppCompatActivity() {
-    private lateinit var binding : ActivityHomeBinding
-    override fun onCreate(savedInstanceState: Bundle?) {
-
-        super.onCreate(savedInstanceState)
-        
-        binding = ActivityHomeBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-    }
-}
-```
-Activity_home 레이아웃 파일과 연결시킬 binding 변수를 만들어 줍니다.
-
-### activity_home
-``` Kotlin
-    <ImageView
-        android:id="@+id/imageView_profile"
-        android:layout_width="wrap_content"
+```kotlin
+<com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="23dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_github"
+        app:tabIndicatorColor="@color/sopt_main_purple"/>
 
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-
-        app:srcCompat="@android:mipmap/sym_def_app_icon" />
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vp_home"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tab_layout"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="0dp" />
 ```
-activity_home 에 쓰인 ImageView에 대한 코드 입니다.
-C:\Users\gua05\AppData\Local\Android\Sdk\platforms\android-32\data\res\mipmap-hdpi\sym_def_app_icon.png 에 있는 이미지 파일을 프로필 사진으로서 활용 하였습니다.
 
-## 프로그램 실행 화면
+tabIndicatorColor에 색상을 지정해주었습니다.
 
-### 메인화면
-![메인화면](./github_image/메인화면.png)
-
-### 메인화면_토스트
-![메인화면_토스트](./github_image/메인화면_토스트.png)
-
-### 홈 화면
-![홈_화면](./github_image/홈_화면.png)
-
-### 회원가입 실패
-![회원가입_실패](./github_image/회원가입_실패.png)
+색상은 sopt_main_purle로 미리 지정해놓은 색상을 활용했습니다.
+3차 세미나때 배운 내용을 활용하였으며, 프로그램 실행 영상에서 정상적으로 작동하는것을 볼 수 있습니다.
