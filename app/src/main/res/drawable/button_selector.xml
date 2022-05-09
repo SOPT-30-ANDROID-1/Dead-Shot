@@ -2,5 +2,4 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:drawable="@drawable/round_angle_button_selected" android:state_selected="true" />
     <item android:drawable="@drawable/round_angle_button_non_selected" android:state_selected="false"/>
-
 </selector>
