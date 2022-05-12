@@ -37,14 +37,15 @@ class HomeActivity : AppCompatActivity() {
            when(it.itemId) {
                R.id.menu_profile -> {
                    binding.vpMain.currentItem = FIRST_FRAGMENT
-                   return@setOnItemSelectedListener true
+                   true
                }
                R.id.menu_home -> {
                    binding.vpMain.currentItem = SECOND_FRAGMENT
-                   return@setOnItemSelectedListener true
+                   true
                }
                else -> {
                    binding.vpMain.currentItem = THIRD_FRAGMENT
+                   //true 만 써도 될 것 같습니다. 모든 경우에서 return을 따로 안처리해주고 적용해보기
                    return@setOnItemSelectedListener true
                }
            }

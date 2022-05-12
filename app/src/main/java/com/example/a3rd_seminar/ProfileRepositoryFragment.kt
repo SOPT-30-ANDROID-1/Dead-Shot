@@ -42,6 +42,8 @@ class ProfileRepositoryFragment : Fragment() {
                 UserData("안드로이드 과제 레포지토리16", "안드로이드 파트 과제")
             )
         )
-        repositoryAdapter.notifyDataSetChanged()
+        //repositoryAdapter.notifyDataSetChanged() 사용할 필요 없다 일단은!
+        //어댑터클래스 밖에서 notifyDataSetChanged를 호출하는 것 보다 어댑터 내부에 데이터를 추가하는 함수를 만들어
+        //캡슐화해봅시다.
     }
 }
