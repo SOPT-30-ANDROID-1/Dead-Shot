@@ -11,7 +11,7 @@
 
 ## 프로그램 실행 영상
 
-https://user-images.githubusercontent.com/48896148/168256677-b87780d7-fd2f-494e-87cb-60c70f10e830.mp4
+https://user-images.githubusercontent.com/48896148/168273412-87e64041-6812-4505-8669-eeb3cf11c15f.mp4
 
 ## postman 통신 결과 및 회원가입 성공 토스트 메시지
 
