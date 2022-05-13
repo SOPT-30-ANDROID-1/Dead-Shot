@@ -7,159 +7,223 @@
 
 
 
-# 3차 세미나
+# 4차 세미나
 
 ## 프로그램 실행 영상
 
-https://user-images.githubusercontent.com/48896148/167121996-c61a9cd8-85cc-47b9-93d1-8bc5f0121e02.mp4
+https://user-images.githubusercontent.com/48896148/168256677-b87780d7-fd2f-494e-87cb-60c70f10e830.mp4
+
+## postman 통신 결과 및 회원가입 성공 토스트 메시지
+
+![슬라이드2](https://user-images.githubusercontent.com/48896148/168260927-13177e56-e856-4272-8724-93e2223cfdbf.JPG)
+![슬라이드1](https://user-images.githubusercontent.com/48896148/168260933-4078418a-843a-4795-b649-c0064979a6ff.JPG)
+
+* 옳은 비밀번호를 전달했을 때와 잘못된 비밀번호를 전달했을 때 의 postman에서의 통신결과
+* 회원가입시 이미 만들어놓은 아이디를 전송하여 "duplicate"오류를 전달받음.
 
 ## 필수과제
 
-### 1. font-family를 활용한 noto_sans_kr.xml
-``` Kotlin
-<?xml version="1.0" encoding="utf-8"?>
-<font-family xmlns:android="http://schemas.android.com/apk/res/android">
+### 1. retrofit interface / 구현체 코드 / Request & Response 객체에 대한 코드
 
-    <font
-        android:font="@font/noto_sans_kr_small"
-        android:fontWeight="100"/>
+#### 1) retrofit interface 
+``` kolitn
+interface SoptService {
+    @POST("auth/signin")
+    fun signIn(
+        @Body body: RequestSignIn
+    ): Call<ResponseSignIn>
 
-    <font
-        android:font="@font/noto_sans_kr_light"
-        android:fontWeight="200"/>
+    @POST("auth/signup")
+    fun signUp(
+        @Body body: RequestSignUp
+    ): Call<ResponseSignUp>
 
-    <font
-        android:font="@font/noto_sans_kr_regular"
-        android:fontWeight="300"/>
-
-    <font
-        android:font="@font/noto_sans_kr_medium"
-        android:fontWeight="400"/>
-
-    <font
-        android:font="@font/noto_sans_kr_bold"
-        android:fontWeight="500"/>
-
-    <font
-        android:font="@font/noto_sans_kr_black"
-        android:fontWeight="600"/>
-
-</font-family>
+}
 ```
-굵기가 얇은 순서대로 fontWeight의 값을 100씩 키웠습니다.
+레트로핏 인터페이스, http 함수 get, post, put, delete 중 post를 사용하여 통신하였습니다.
+"'''/auth/signin"로 RequestSignIn 형식의 클래스로 만든 바디를 보내고 전달받은 Json 형태의 정보를ResponseSignIn 형식의 오브젝트로 파싱하여 활용하게됩니다.
 
-### 2. 기존 HomeActivity --> ProfileFragment 에 구현하기
+"signup"의 경우도 위와 동일한 과정으로 통신합니다.
 
-1) 어플 구획을 위하여 ConstraintLayout을 fragment안에 추가로 구성
+#### 2) retrofit interface 구현체 코드
+``` kolint
+object ServiceCreator {
+    private const val BASE_URL = "http://13.124.62.236/"
+
+    private val retrofit: Retrofit = Retrofit.Builder()
+        .baseUrl(BASE_URL)
+        .addConverterFactory(GsonConverterFactory.create())
+        .build()
+
+    val soptService : SoptService = retrofit.create(SoptService::class.java)
+}
+```
+레트로핏 인터페이스를 활용하여 실질적으로 구현하여 생성해주는 객체에 대한 코드입니다.
+레트로핏 객체의 경우 싱글톤으로 제작하는 것이 바람직 하다고 합니다.
+인터페이스와 실제 구현체를 분리하여 만드는 이유라고 생각합니다. ?!
+BASE_URL 변수에 주소를 담아 활용하고있습니다.
+
+#### 3) Request & Response
 ``` kotlin
-<androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cl_gray"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#444444"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+data class RequestSignIn(
+    @SerializedName("email")
+    val id: String,
+    val password: String
+)
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="100dp"
-            android:src="@drawable/ic_option"
-            app:layout_constraintStart_toEndOf="@id/iv_profile"
-            app:layout_constraintTop_toTopOf="@id/iv_profile" />
+data class RequestSignUp(
+    val name: String,
+    val email : String,
+    val password: String
+)
 
+data class ResponseSignIn(
+    val status: Int,
+    val message : String,
+    val data : Data
+) {
+    data class Data(
+        val name: String,
+        val email: String
+    )
+}
 
-        <ImageView
-            android:id="@+id/iv_profile"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginTop="44dp"
-            android:src="@drawable/image_github"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/tv_profile"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="ChoiWooHyeong"
-            android:fontFamily="@font/noto_sans_kr_bold"
-            android:textAppearance="@style/text_style_user_name"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/iv_profile" />
-
-        <TextView
-            android:id="@+id/tv_insta_id"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="11dp"
-            android:text="\@vvoo__hyeong"
-            android:fontFamily="@font/noto_sans_kr_regular"
-            android:textColor="#DFDAED"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_profile" />
-
-        <TextView
-            android:id="@+id/tv_about_user"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="11dp"
-            android:layout_marginBottom="15dp"
-            android:text="개발자 꿈나무"
-            android:textColor="#8F8F8F"
-            android:fontFamily="@font/noto_sans_kr_medium"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_insta_id" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+data class ResponseSignUp(
+    val status: Int,
+    val message : String,
+    val data : Data
+) {
+    data class Data(
+        val id : Int
+    )
+}
 ```
-프레그먼트 내의 ImageView ~ 유저 소개용 TextView (개발자 꿈나무) 까지 새로운 레이아웃 내에 구현 후 배경 색상 바꿔주었음.
+각각 통신 요청시 보낼 JSON 형의 정보들을 kotlin 에서의 data class로서 구현하였습니다.
+통신 결과 응답시 받을 JSON 형의 정보들에 대해서도 마찬가지입니다.
+RequestSignIn에서 @SerializedName()을 활용하고 있습니다. 변수명과 JSON에서의 자료형이 일치하지 않을 경우 이를 연결하기위해 사용합니다.
 
-2) 버튼에 셀렉터 활용
+## 성장 과제
+
+### 1. Github API 연동해서 리스트로 띄우기
+
+#### 1) Retrofit interface
 ``` kotlin
-<?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:drawable="@drawable/round_angle_button_selected" android:state_selected="true" />
-    <item android:drawable="@drawable/round_angle_button_non_selected" android:state_selected="false"/>
-</selector>
+interface GithubFollowerListService {
+    @GET("users/{username}/following")
+    fun getFollowerList (
+        @Path("username") username:String
+    ): Call<ResponseFollowerList>
+}
 ```
-위와 같은 background 요소를 만들어 주었음. 이전 시간에 만든 @drawable/round_angle_button에서 색상을 수정하여 selected, non_selected일때의 요소들을 만들어 버튼이 선택될 때와 아닐 때의 background를 구분해 주었습니다.
+Github API에 따르면 GET함수를 사용해야하며 해당 유저에 대한 정보를 가져와야 하므로 Path()를 이용하였습니다.
+!! 작업 막판에 알게되었군요, following으로 잘못 만들었습니다. follower로 만들어야하지만, 구현 방식에 차이가 없으므로 추후 코드 수정하도록 해야겠습니다.
 
-3) 원형 이미지 활용하였으며, BottomNavigation 의 경우 Figma에서 svg를 export하여 구현하였습니다.
-(프로그램 실행 영상 참고)
+#### 2) Retrofit interface 실제 구현체
+``` kotlin
+object GithubServiceCreator {
+    private const val BASE_URL = "https://api.github.com/"
 
-### 3. HomeFragment
+    private val retrofit: Retrofit = Retrofit.Builder()
+        .baseUrl(BASE_URL)
+        .addConverterFactory(GsonConverterFactory.create())
+        .build()
 
-1) TabLayout과 ViewPager2
-
-```kotlin
-<com.google.android.material.tabs.TabLayout
-        android:id="@+id/tab_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="23dp"
-        app:layout_constraintTop_toBottomOf="@id/tv_github"
-        app:tabIndicatorColor="@color/sopt_main_purple"/>
-
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/vp_home"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tab_layout"
-        app:layout_constraintVertical_bias="0.0"
-        tools:layout_editor_absoluteX="0dp" />
+    val githubFollowerListService : GithubFollowerListService = retrofit.create(GithubFollowerListService::class.java)
+}
 ```
+BASE_URL 에 Github API에서 알려준 주소를 넣어놓았습니다. 위에 만든 retrofit interface 형의 변수를 생성하였습니다.
 
-tabIndicatorColor에 색상을 지정해주었습니다.
+#### 3) Response 객체
+``` kotlin
+class ResponseFollowerList : ArrayList<ResponseFollowerListItem>()
 
-색상은 sopt_main_purle로 미리 지정해놓은 색상을 활용했습니다.
-3차 세미나때 배운 내용을 활용하였으며, 프로그램 실행 영상에서 정상적으로 작동하는것을 볼 수 있습니다.
+data class ResponseFollowerListItem(
+    @SerializedName("avatar_url")
+    val avatarUrl: String,
+    @SerializedName("events_url")
+    val eventsUrl: String,
+    @SerializedName("followers_url")
+    val followersUrl: String,
+    @SerializedName("following_url")
+    val followingUrl: String,
+    @SerializedName("gists_url")
+    val gistsUrl: String,
+    @SerializedName("gravatar_id")
+    val gravatarId: String,
+    @SerializedName("html_url")
+    val htmlUrl: String,
+    @SerializedName("id")
+    val id: Int,
+    @SerializedName("login")
+    val login: String,
+    @SerializedName("node_id")
+    val nodeId: String,
+    @SerializedName("organizations_url")
+    val organizationsUrl: String,
+    @SerializedName("received_events_url")
+    val receivedEventsUrl: String,
+    @SerializedName("repos_url")
+    val reposUrl: String,
+    @SerializedName("site_admin")
+    val siteAdmin: Boolean,
+    @SerializedName("starred_url")
+    val starredUrl: String,
+    @SerializedName("subscriptions_url")
+    val subscriptionsUrl: String,
+    @SerializedName("type")
+    val type: String,
+    @SerializedName("url")
+    val url: String
+)
+```
+Github 에서 객체를 담고있는 배열 형태의 자료를 JSON 형태로 제공합니다. 그래서 객체들을 배열 형태로 담아줄 ArrayList 클래스를 플러그인을 통해 만들었습니다.
+
+Github API 에서 제공하는 Data example 과 android studio 에서 제공하는 Json to kotlin plugin 을 이용하여 Response 객체를 위한 데이터 클래스를 만들었습니다.
+사용하지 않는 data들은 없애거나 주석 처리를 해놓는건 어떤가 합니다. 이 역시 알아봐야겠습니다. 
+유지, 보수, 확장을 위해서는 남겨두는것도 편할 수 있을것 같기도 합니다...?
+
+#### 4) ProfileFollowerFragment에서 callback 구현하여 recyclerview에 정보를 넣어주는 함수 구현
+``` kotlin
+    private fun getFollowerList() {
+        followerAdapter = FollowerAdapter()
+        binding.rvFollower.adapter = followerAdapter
+        val username: String = "dn7638"
+
+
+        val call: Call<ResponseFollowerList> =
+            GithubServiceCreator.githubFollowerListService.getFollowerList(username = username)
+
+        call.enqueue(object : Callback<ResponseFollowerList> {
+            override fun onResponse(
+                call: Call<ResponseFollowerList>,
+                response: Response<ResponseFollowerList>
+            ) {
+                if (response.isSuccessful) {
+                    val data: ResponseFollowerList? = response.body()
+
+                    if (data != null) {
+                        for (i in data) {
+
+                            followerAdapter.userList.add(
+                                UserData(
+                                    i.login,
+                                    i.htmlUrl
+                                )
+                            )
+
+                        }
+                        //followerAdapter.notifyDataSetChanged() 이 부분은 일단 필요 없을 듯 함..
+                    }
+                }
+
+            }
+
+            override fun onFailure(call: Call<ResponseFollowerList>, t: Throwable) {
+                Log.e("NetworkTest", "error:$t")
+            }
+        })
+    }
+```
+recyclerview에 정보를 담아줄 adapter객체를 생성합니다.
+Call 객체를 생성하여 전달받은 데이터를 어댑터를 활용하여 recyclerview에 담는데 쓰이는 data class 에 담아 add 해줍니다.
+response의 body를 data변수에 담아주었습니다. Github에서 주는 정보는 배열안에 객체들을 담아주고있기에 for 문과 배열을 활용하여 담아주었습니다.
