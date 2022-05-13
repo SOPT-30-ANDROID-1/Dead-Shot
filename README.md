@@ -16,17 +16,20 @@ https://user-images.githubusercontent.com/48896148/168256677-b87780d7-fd2f-494e-
 ## postman 통신 결과 및 회원가입 성공 토스트 메시지
 
 ![슬라이드2](https://user-images.githubusercontent.com/48896148/168260927-13177e56-e856-4272-8724-93e2223cfdbf.JPG)
+
+* 회원가입시 이미 만들어놓은 아이디를 전송하여 "duplicate"오류를 전달받음.
+
 ![슬라이드1](https://user-images.githubusercontent.com/48896148/168260933-4078418a-843a-4795-b649-c0064979a6ff.JPG)
 
 * 옳은 비밀번호를 전달했을 때와 잘못된 비밀번호를 전달했을 때 의 postman에서의 통신결과
-* 회원가입시 이미 만들어놓은 아이디를 전송하여 "duplicate"오류를 전달받음.
+
 
 ## 필수과제
 
 ### 1. retrofit interface / 구현체 코드 / Request & Response 객체에 대한 코드
 
 #### 1) retrofit interface 
-``` kolitn
+``` kotlin
 interface SoptService {
     @POST("auth/signin")
     fun signIn(
@@ -46,7 +49,7 @@ interface SoptService {
 "signup"의 경우도 위와 동일한 과정으로 통신합니다.
 
 #### 2) retrofit interface 구현체 코드
-``` kolint
+``` kotlin
 object ServiceCreator {
     private const val BASE_URL = "http://13.124.62.236/"
 
