@@ -1,4 +1,4 @@
-package com.example.a3rd_seminar
+package com.example.a3rd_seminar.control.home.sub_fragments.profile_fragment
 
 import android.os.Bundle
 import android.util.Log
@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.a3rd_seminar.FollowerAdapter
+import com.example.a3rd_seminar.UserData
 import com.example.a3rd_seminar.databinding.FragmentProfileFollowerBinding
 import com.example.a3rd_seminar.server_github.GithubServiceCreator
 import com.example.a3rd_seminar.server_github.ResponseFollowerList

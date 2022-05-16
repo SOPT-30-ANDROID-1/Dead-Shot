@@ -1,8 +1,12 @@
-package com.example.a3rd_seminar
+package com.example.a3rd_seminar.control.home
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
+import com.example.a3rd_seminar.*
+import com.example.a3rd_seminar.control.home.sub_fragments.CameraFragment
+import com.example.a3rd_seminar.control.home.sub_fragments.HomeFragment
+import com.example.a3rd_seminar.control.home.sub_fragments.ProfileFragment
 import com.example.a3rd_seminar.databinding.ActivityHomeBinding
 
 class HomeActivity : AppCompatActivity() {

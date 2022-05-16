@@ -14,5 +14,4 @@ interface GithubFollowerListService {
     fun getFollowerList (
         @Path("username") username:String
     ): Call<ResponseFollowerList>
-
 }
