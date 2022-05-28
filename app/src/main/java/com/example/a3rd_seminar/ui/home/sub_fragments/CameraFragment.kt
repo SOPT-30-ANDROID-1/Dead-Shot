@@ -1,4 +1,4 @@
-package com.example.a3rd_seminar.control.home.sub_fragments
+package com.example.a3rd_seminar.ui.home.sub_fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

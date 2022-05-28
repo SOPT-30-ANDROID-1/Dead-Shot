@@ -8,6 +8,7 @@ import com.example.a3rd_seminar.databinding.ActivitySignUpBinding
 import com.example.a3rd_seminar.sever_tools.RequestSignUp
 import com.example.a3rd_seminar.sever_tools.ResponseSignUp
 import com.example.a3rd_seminar.sever_tools.ServiceCreator
+import com.example.a3rd_seminar.util.enqueueUtil
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -57,6 +58,19 @@ class SignUpActivity : AppCompatActivity() {
         )
 
         val call: Call<ResponseSignUp> = ServiceCreator.soptService.signUp(requestSignUp)
+
+        call.enqueueUtil(
+            onSuccess = {
+
+            },
+            onError = {
+
+            }
+
+
+        )
+
+
 
         call.enqueue(object : Callback<ResponseSignUp> {
             override fun onResponse(
