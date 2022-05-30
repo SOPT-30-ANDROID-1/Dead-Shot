@@ -20,6 +20,7 @@ class SignInActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         initEvent()
+        initButtonClickListener()
 
         binding.btSignUp.setOnClickListener {
             val intent = Intent(this, SignUpActivity::class.java)
@@ -52,5 +53,11 @@ class SignInActivity : AppCompatActivity() {
                 Toast.makeText(this@SignInActivity, "로그인에 실패하셨습니다.", Toast.LENGTH_SHORT).show()
             }
         )
+    }
+
+    fun initButtonClickListener(){
+        binding.rbAutoSignIn.isSelected = false
+        binding.rbAutoSignIn.isSelected = !binding.rbAutoSignIn.isSelected
+
     }
 }

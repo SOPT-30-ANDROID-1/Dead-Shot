@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.a3rd_seminar.R
 import com.example.a3rd_seminar.databinding.FragmentOnBoarding3Binding
+import com.example.a3rd_seminar.ui.on_boarding.OnBoardingActivity
 
 class OnBoardingFragment3 : Fragment() {
     private var _binding: FragmentOnBoarding3Binding? = null
@@ -21,6 +22,7 @@ class OnBoardingFragment3 : Fragment() {
 
         binding.btnNext.setOnClickListener {
             findNavController().navigate(R.id.action_onBoardingFragment3_to_signInActivity)
+            (activity as OnBoardingActivity).finish()
         }
         return binding.root
     }

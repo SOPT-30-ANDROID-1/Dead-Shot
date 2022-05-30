@@ -18,6 +18,25 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/tv_auto_sign_in"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="20dp"
+        android:text="자동 로그인"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/img_github" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/rb_auto_sign_in"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/buttom_selector_auto_sign_in"
+        app:layout_constraintEnd_toStartOf="@id/tv_auto_sign_in"
+        app:layout_constraintTop_toBottomOf="@id/img_github" />
+
+    <TextView
         android:id="@+id/tv_github_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
