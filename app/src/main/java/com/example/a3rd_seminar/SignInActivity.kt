@@ -21,6 +21,7 @@ class SignInActivity : AppCompatActivity() {
 
         initEvent()
         initButtonClickListener()
+        binding.rbAutoSignIn.isSelected = true
 
         binding.btSignUp.setOnClickListener {
             val intent = Intent(this, SignUpActivity::class.java)
@@ -55,9 +56,9 @@ class SignInActivity : AppCompatActivity() {
         )
     }
 
-    fun initButtonClickListener(){
-        binding.rbAutoSignIn.isSelected = false
-        binding.rbAutoSignIn.isSelected = !binding.rbAutoSignIn.isSelected
-
+    private fun initButtonClickListener() {
+        binding.rbAutoSignIn.setOnClickListener {
+            binding.rbAutoSignIn.isSelected = !binding.rbAutoSignIn.isSelected
+        }
     }
 }

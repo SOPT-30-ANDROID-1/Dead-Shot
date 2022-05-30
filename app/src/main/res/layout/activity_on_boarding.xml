@@ -17,8 +17,7 @@
         android:textAppearance="@style/text_style_home_github"
         app:layout_constraintTop_toTopOf="parent" />
 
-
-3    <androidx.fragment.app.FragmentContainerView
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/container_sample"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"

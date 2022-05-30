@@ -29,10 +29,10 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/rb_auto_sign_in"
-        android:layout_width="20dp"
+        android:layout_width="wrap_content"
         android:layout_height="20dp"
         android:layout_marginTop="40dp"
-        android:background="@drawable/buttom_selector_auto_sign_in"
+        android:background="@drawable/button_selector_auto_signin"
         app:layout_constraintEnd_toStartOf="@id/tv_auto_sign_in"
         app:layout_constraintTop_toBottomOf="@id/img_github" />
 
