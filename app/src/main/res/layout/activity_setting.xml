@@ -24,6 +24,7 @@
         android:background="@color/black"/>
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_auto_login_release"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="@style/text_style_home_github"

@@ -47,5 +47,15 @@ object SOPTSharedPreferences {
             .remove(AUTO_LOGIN)
             .clear()
             .apply()
+
+        preferences.edit()
+            .remove(ID)
+            .clear()
+            .apply()
+
+        preferences.edit()
+            .remove(PASS_WORD)
+            .clear()
+            .apply()
     }
 }

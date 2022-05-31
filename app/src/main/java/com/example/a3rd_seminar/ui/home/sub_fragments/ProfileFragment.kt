@@ -1,5 +1,6 @@
 package com.example.a3rd_seminar.ui.home.sub_fragments
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,6 +10,7 @@ import com.example.a3rd_seminar.ui.home.sub_fragments.profile.ProfileFollowerFra
 import com.example.a3rd_seminar.ui.home.sub_fragments.profile.ProfileRepositoryFragment
 import com.example.a3rd_seminar.R
 import com.example.a3rd_seminar.databinding.FragmentProfileBinding
+import com.example.a3rd_seminar.ui.setting.SettingActivity
 
 
 class ProfileFragment : Fragment() {
@@ -20,6 +22,7 @@ class ProfileFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentProfileBinding.inflate(layoutInflater, container, false)
+        initSettingButtonListener()
         initTransactionEvent()
         return binding.root
     }
@@ -49,6 +52,13 @@ class ProfileFragment : Fragment() {
             binding.btRepository.isSelected = binding.btRepository.isSelected != true
             binding.btFollower.isSelected = false
 
+        }
+    }
+
+    private fun initSettingButtonListener(){
+        binding.ivSetting.setOnClickListener(){
+            val intent = Intent(activity, SettingActivity::class.java); //fragment라서 activity intent와는 다른 방식
+            startActivity(intent);
         }
     }
 
