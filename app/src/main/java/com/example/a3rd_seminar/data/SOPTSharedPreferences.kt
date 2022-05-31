@@ -25,15 +25,18 @@ object SOPTSharedPreferences {
             .apply()
     }
 
+    //ID, PASS_WORD 를 키 값으로 하는 id, password데이터 저장하는 함수
     fun setUserData(id: String, passWord: String) {
         preferences.edit().putString(ID, id).apply()
         preferences.edit().putString(PASS_WORD, passWord).apply()
     }
 
+    //ID 를 가져오는 함수
     fun getUserID(): String {
         return preferences.getString(ID, "").toString()
     }
 
+    //위와 동일
     fun getUserPassWord(): String {
         return preferences.getString(PASS_WORD, "").toString()
     }

@@ -44,6 +44,7 @@ class SignInActivity : AppCompatActivity() {
             password = binding.etPassword.text.toString()
         )
 
+        //처음 로그인 시 requestSignIn에 정보를 저장함과 동시에 sharedPreferences 에도 정보 저장
         SOPTSharedPreferences.setUserData(
             id = binding.etGithubId.text.toString(),
             passWord = binding.etPassword.text.toString()
@@ -65,6 +66,7 @@ class SignInActivity : AppCompatActivity() {
         )
     }
 
+    //체크박스를 통해 자동 로그인 여부를 결정
     private fun initClickEvent() {
         binding.rbAutoSignIn.setOnClickListener {
             binding.rbAutoSignIn.isSelected = !binding.rbAutoSignIn.isSelected
@@ -73,6 +75,8 @@ class SignInActivity : AppCompatActivity() {
         }
     }
 
+    //자동 로그인 설정이 되어있다면, 로그인 버튼을 클릭하기 전에 sharedPreferences 에 미리 저장되어있던 id,
+    //password 를 활용하여 로그인 시도 loginNetwork() 함수와 중복되는 부분이 많아 개선할 부분이 많아보임.
     private fun isAutoLogin() {
         if (SOPTSharedPreferences.getAutoLogin()) {
 
