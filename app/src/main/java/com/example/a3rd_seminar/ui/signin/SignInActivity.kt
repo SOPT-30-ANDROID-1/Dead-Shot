@@ -1,9 +1,10 @@
-package com.example.a3rd_seminar
+package com.example.a3rd_seminar.ui.signin
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.a3rd_seminar.ui.signup.SignUpActivity
 import com.example.a3rd_seminar.data.SOPTSharedPreferences
 import com.example.a3rd_seminar.databinding.ActivitySignInBinding
 import com.example.a3rd_seminar.sever_tools.RequestSignIn

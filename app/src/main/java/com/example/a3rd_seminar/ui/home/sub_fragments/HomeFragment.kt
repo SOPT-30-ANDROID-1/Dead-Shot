@@ -5,8 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.a3rd_seminar.ui.home.sub_fragments.home_fragment.HomeTabFragment1
-import com.example.a3rd_seminar.ui.home.sub_fragments.home_fragment.HomeTabFragment2
+import com.example.a3rd_seminar.ui.home.sub_fragments.home.HomeTabFragment1
+import com.example.a3rd_seminar.ui.home.sub_fragments.home.HomeTabFragment2
 import com.example.a3rd_seminar.TabViewPagerAdapter
 import com.example.a3rd_seminar.databinding.FragmentHomeBinding
 import com.google.android.material.tabs.TabLayoutMediator

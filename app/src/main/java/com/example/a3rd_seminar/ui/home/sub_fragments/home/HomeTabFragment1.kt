@@ -1,4 +1,4 @@
-package com.example.a3rd_seminar.ui.home.sub_fragments.home_fragment
+package com.example.a3rd_seminar.ui.home.sub_fragments.home
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -14,10 +14,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [HomeTabFragment2.newInstance] factory method to
+ * Use the [HomeTabFragment1.newInstance] factory method to
  * create an instance of this fragment.
  */
-class HomeTabFragment2 : Fragment() {
+class HomeTabFragment1 : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -35,7 +35,7 @@ class HomeTabFragment2 : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home_tab2, container, false)
+        return inflater.inflate(R.layout.fragment_home_tab1, container, false)
     }
 
     companion object {
@@ -45,12 +45,12 @@ class HomeTabFragment2 : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment HomeTabFragment2.
+         * @return A new instance of fragment HomeTabFragment1.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            HomeTabFragment2().apply {
+            HomeTabFragment1().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)
