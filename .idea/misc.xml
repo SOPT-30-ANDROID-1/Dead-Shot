@@ -37,19 +37,28 @@
         <entry key="..\:/Users/dn7638/AndroidStudioProjects/seminar3/app/src/main/res/layout/item_follower_list.xml" value="0.9" />
         <entry key="..\:/Users/dn7638/AndroidStudioProjects/seminar3/app/src/main/res/layout/item_repository_list.xml" value="0.25" />
         <entry key="..\:/Users/dn7638/AndroidStudioProjects/seminar3/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1465" />
+        <entry key="..\:/Users/gua05/AndroidStudioProjects/3rd_seminar/app/src/main/res/drawable/buttom_selector_auto_sign_in.xml" value="0.13" />
         <entry key="..\:/Users/gua05/AndroidStudioProjects/3rd_seminar/app/src/main/res/drawable/button_selector.xml" value="0.1" />
+        <entry key="..\:/Users/gua05/AndroidStudioProjects/3rd_seminar/app/src/main/res/drawable/button_selector_auto_signin.xml" value="0.13" />
+        <entry key="..\:/Users/gua05/AndroidStudioProjects/3rd_seminar/app/src/main/res/drawable/button_selector_auto_signin_not_selected.xml" value="0.13" />
+        <entry key="..\:/Users/gua05/AndroidStudioProjects/3rd_seminar/app/src/main/res/drawable/button_selector_auto_signin_selected.xml" value="0.13" />
         <entry key="..\:/Users/gua05/AndroidStudioProjects/3rd_seminar/app/src/main/res/drawable/default_edit_text_background.xml" value="0.126" />
+        <entry key="..\:/Users/gua05/AndroidStudioProjects/3rd_seminar/app/src/main/res/drawable/ic_baseline_check_circle_20.xml" value="0.13" />
+        <entry key="..\:/Users/gua05/AndroidStudioProjects/3rd_seminar/app/src/main/res/drawable/ic_baseline_radio_button_unchecked_24.xml" value="0.13" />
         <entry key="..\:/Users/gua05/AndroidStudioProjects/3rd_seminar/app/src/main/res/drawable/ic_home_gary.xml" value="0.259" />
         <entry key="..\:/Users/gua05/AndroidStudioProjects/3rd_seminar/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1235" />
+        <entry key="..\:/Users/gua05/AndroidStudioProjects/3rd_seminar/app/src/main/res/drawable/ic_option.xml" value="0.13" />
         <entry key="..\:/Users/gua05/AndroidStudioProjects/3rd_seminar/app/src/main/res/drawable/ic_profile.xml" value="0.2585" />
         <entry key="..\:/Users/gua05/AndroidStudioProjects/3rd_seminar/app/src/main/res/drawable/ic_profile_gray.xml" value="0.259" />
         <entry key="..\:/Users/gua05/AndroidStudioProjects/3rd_seminar/app/src/main/res/drawable/round_angle.xml" value="0.1" />
         <entry key="..\:/Users/gua05/AndroidStudioProjects/3rd_seminar/app/src/main/res/drawable/round_angle_button.xml" value="0.259" />
+        <entry key="..\:/Users/gua05/AndroidStudioProjects/3rd_seminar/app/src/main/res/drawable/round_angle_button_non_selected.xml" value="0.13" />
+        <entry key="..\:/Users/gua05/AndroidStudioProjects/3rd_seminar/app/src/main/res/drawable/round_angle_button_selected.xml" value="0.13" />
         <entry key="..\:/Users/gua05/AndroidStudioProjects/3rd_seminar/app/src/main/res/font/nato_sans_kr.xml" value="0.15833333333333333" />
         <entry key="..\:/Users/gua05/AndroidStudioProjects/3rd_seminar/app/src/main/res/font/noto_sans_kr.xml" value="0.14192708333333334" />
         <entry key="..\:/Users/gua05/AndroidStudioProjects/3rd_seminar/app/src/main/res/layout/activity_home.xml" value="0.264" />
         <entry key="..\:/Users/gua05/AndroidStudioProjects/3rd_seminar/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/Users/gua05/AndroidStudioProjects/3rd_seminar/app/src/main/res/layout/activity_sign_in.xml" value="0.8" />
+        <entry key="..\:/Users/gua05/AndroidStudioProjects/3rd_seminar/app/src/main/res/layout/activity_sign_in.xml" value="0.264" />
         <entry key="..\:/Users/gua05/AndroidStudioProjects/3rd_seminar/app/src/main/res/layout/activity_sign_up.xml" value="0.11510416666666666" />
         <entry key="..\:/Users/gua05/AndroidStudioProjects/3rd_seminar/app/src/main/res/layout/fragment_camera.xml" value="0.1" />
         <entry key="..\:/Users/gua05/AndroidStudioProjects/3rd_seminar/app/src/main/res/layout/fragment_home.xml" value="0.1" />
