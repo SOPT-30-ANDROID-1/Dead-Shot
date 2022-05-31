@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.setting.SettingActivity">
+
+    <TextView
+        android:padding="15dp"
+        android:id="@+id/tv_setting"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="환경설정"
+        android:textAppearance="@style/text_style_home_github"/>
+
+    <View
+        android:id="@+id/view_bar1"
+        app:layout_constraintTop_toBottomOf="@id/tv_setting"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginHorizontal="10dp"
+        android:background="@color/black"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/text_style_home_github"
+        app:layout_constraintTop_toBottomOf="@id/view_bar1"
+        android:layout_marginHorizontal="10dp"
+        android:background="@drawable/round_angle_button_non_selected"
+        android:layout_marginTop="10dp"
+        android:text="자동 로그인 해제"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
