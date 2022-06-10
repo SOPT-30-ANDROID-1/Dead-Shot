@@ -12,6 +12,7 @@
 ## 프로그램 실행 영상
 
 https://user-images.githubusercontent.com/48896148/173035240-cfa25957-4e8b-4b4e-9da4-057f3105c270.mp4
+
 https://user-images.githubusercontent.com/48896148/173035260-aa6dfe03-c6d7-4bec-a43f-263210e4aee8.mp4
 
 
