@@ -1,11 +1,16 @@
 package com.example.a3rd_seminar.ui.signin
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContract
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.example.a3rd_seminar.ui.signup.SignUpActivity
 import com.example.a3rd_seminar.data.SOPTSharedPreferences
+import com.example.a3rd_seminar.data.UserInfo
 import com.example.a3rd_seminar.databinding.ActivitySignInBinding
 import com.example.a3rd_seminar.sever_tools.RequestSignIn
 import com.example.a3rd_seminar.sever_tools.ResponseSignIn
@@ -16,6 +21,7 @@ import retrofit2.Call
 
 class SignInActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySignInBinding
+    private lateinit var getResultIdPassword : ActivityResultLauncher<Intent>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySignInBinding.inflate(layoutInflater)
@@ -25,9 +31,17 @@ class SignInActivity : AppCompatActivity() {
         initEvent()
         initClickEvent()
 
+        getResultIdPassword = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){ result ->
+            if( result.resultCode == RESULT_OK){
+                val id = result.data?.getStringExtra("id") ?:""
+                val password = result.data?.getStringExtra("password")?:""
+                binding.user = UserInfo(id, password)
+            }
+        }
+
         binding.btSignUp.setOnClickListener {
             val intent = Intent(this, SignUpActivity::class.java)
-            startActivity(intent)
+            getResultIdPassword.launch(intent)
         }
 
         setContentView(binding.root)
