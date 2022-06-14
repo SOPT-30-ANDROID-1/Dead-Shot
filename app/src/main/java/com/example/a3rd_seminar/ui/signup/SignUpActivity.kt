@@ -1,6 +1,5 @@
 package com.example.a3rd_seminar.ui.signup
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -9,7 +8,6 @@ import com.example.a3rd_seminar.databinding.ActivitySignUpBinding
 import com.example.a3rd_seminar.sever_tools.RequestSignUp
 import com.example.a3rd_seminar.sever_tools.ResponseSignUp
 import com.example.a3rd_seminar.sever_tools.ServiceCreator
-import com.example.a3rd_seminar.ui.signin.SignInActivity
 import com.example.a3rd_seminar.util.enqueueUtil
 import retrofit2.Call
 import retrofit2.Callback
@@ -47,20 +45,7 @@ class SignUpActivity : AppCompatActivity() {
  */
 
     private fun initEvent() {
-        with(binding) {
-            binding.btSignUp.setOnClickListener {
-                if (etGithubId.length() == 0 || etName.length() == 0 || etPassword.length() == 0) {
-                    Toast.makeText(this@SignUpActivity, "입력하지 않은 정보가 있습니다.", Toast.LENGTH_SHORT)
-                        .show()
-                } else {
-                    val intent = Intent(this@SignUpActivity, SignInActivity::class.java)
-                    intent.putExtra("id", etGithubId.text.toString())
-                    intent.putExtra("password", etPassword.text.toString())
-                    setResult(RESULT_OK, intent)
-                    finish()
-
-                }
-            }
+        binding.btSignUp.setOnClickListener {
             signUpNetwork()
         }
     }

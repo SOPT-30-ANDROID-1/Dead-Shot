@@ -1,14 +1,11 @@
 package com.example.a3rd_seminar.ui.signin
 
-import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
-import androidx.activity.result.contract.ActivityResultContract
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import com.example.a3rd_seminar.ui.signup.SignUpActivity
 import com.example.a3rd_seminar.data.SOPTSharedPreferences
 import com.example.a3rd_seminar.data.UserInfo
 import com.example.a3rd_seminar.databinding.ActivitySignInBinding
@@ -16,38 +13,46 @@ import com.example.a3rd_seminar.sever_tools.RequestSignIn
 import com.example.a3rd_seminar.sever_tools.ResponseSignIn
 import com.example.a3rd_seminar.sever_tools.ServiceCreator
 import com.example.a3rd_seminar.ui.home.HomeActivity
+import com.example.a3rd_seminar.ui.signup.SignUpActivity
 import com.example.a3rd_seminar.util.enqueueUtil
 import retrofit2.Call
 
 class SignInActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySignInBinding
-    private lateinit var getResultIdPassword : ActivityResultLauncher<Intent>
+    private lateinit var getResultIdPassword: ActivityResultLauncher<Intent>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySignInBinding.inflate(layoutInflater)
 
         SOPTSharedPreferences.init(this)
         isAutoLogin()
-        initEvent()
-        initClickEvent()
-
-        getResultIdPassword = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){ result ->
-            if( result.resultCode == RESULT_OK){
-                val id = result.data?.getStringExtra("id") ?:""
-                val password = result.data?.getStringExtra("password")?:""
-                binding.user = UserInfo(id, password)
-            }
-        }
-
-        binding.btSignUp.setOnClickListener {
-            val intent = Intent(this, SignUpActivity::class.java)
-            getResultIdPassword.launch(intent)
-        }
+        initLoginButtonEvent()
+        initAutoBoxClickEvent()
+        setResultSignUp()
+        initSignUpButtonEvent()
 
         setContentView(binding.root)
     }
 
-    private fun initEvent() {
+    private fun initSignUpButtonEvent(){
+        binding.btSignUp.setOnClickListener {
+            val intent = Intent(this, SignUpActivity::class.java)
+            getResultIdPassword.launch(intent)
+        }
+    }
+
+    private fun setResultSignUp(){
+        getResultIdPassword =
+            registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+                if (result.resultCode == RESULT_OK) {
+                    val id = result.data?.getStringExtra("id") ?: ""
+                    val password = result.data?.getStringExtra("password") ?: ""
+                    binding.user = UserInfo(id, password)
+                }
+            }
+    }
+
+    private fun initLoginButtonEvent() {
         binding.btLogIn.setOnClickListener {
             loginNetwork()
         }
@@ -73,7 +78,10 @@ class SignInActivity : AppCompatActivity() {
                     "${it.data.email}님 반갑습니다!",
                     Toast.LENGTH_SHORT
                 ).show()
-                startActivity(Intent(this@SignInActivity, HomeActivity::class.java))
+                val intent = Intent(this@SignInActivity, HomeActivity::class.java)
+                startActivity(intent)
+
+
             },
             onError = {
                 Toast.makeText(this@SignInActivity, "로그인에 실패하셨습니다.", Toast.LENGTH_SHORT).show()
@@ -82,7 +90,7 @@ class SignInActivity : AppCompatActivity() {
     }
 
     //체크박스를 통해 자동 로그인 여부를 결정
-    private fun initClickEvent() {
+    private fun initAutoBoxClickEvent() {
         binding.rbAutoSignIn.setOnClickListener {
             binding.rbAutoSignIn.isSelected = !binding.rbAutoSignIn.isSelected
 
