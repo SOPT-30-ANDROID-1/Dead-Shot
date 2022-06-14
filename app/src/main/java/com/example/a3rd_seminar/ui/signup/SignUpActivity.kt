@@ -1,13 +1,15 @@
 package com.example.a3rd_seminar.ui.signup
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.a3rd_seminar.databinding.ActivitySignUpBinding
 import com.example.a3rd_seminar.sever_tools.RequestSignUp
 import com.example.a3rd_seminar.sever_tools.ResponseSignUp
 import com.example.a3rd_seminar.sever_tools.ServiceCreator
+import com.example.a3rd_seminar.ui.signin.SignInActivity
 import com.example.a3rd_seminar.util.enqueueUtil
 import retrofit2.Call
 import retrofit2.Callback
@@ -45,7 +47,20 @@ class SignUpActivity : AppCompatActivity() {
  */
 
     private fun initEvent() {
-        binding.btSignUp.setOnClickListener {
+        with(binding) {
+            binding.btSignUp.setOnClickListener {
+                if (etGithubId.length() == 0 || etName.length() == 0 || etPassword.length() == 0) {
+                    Toast.makeText(this@SignUpActivity, "입력하지 않은 정보가 있습니다.", Toast.LENGTH_SHORT)
+                        .show()
+                } else {
+                    val intent = Intent(this@SignUpActivity, SignInActivity::class.java)
+                    intent.putExtra("id", etGithubId.text.toString())
+                    intent.putExtra("password", etPassword.text.toString())
+                    setResult(RESULT_OK, intent)
+                    finish()
+
+                }
+            }
             signUpNetwork()
         }
     }
@@ -61,17 +76,10 @@ class SignUpActivity : AppCompatActivity() {
 
         call.enqueueUtil(
             onSuccess = {
-
             },
             onError = {
-
             }
-
-
         )
-
-
-
         call.enqueue(object : Callback<ResponseSignUp> {
             override fun onResponse(
                 call: Call<ResponseSignUp>,
@@ -87,7 +95,8 @@ class SignUpActivity : AppCompatActivity() {
                     ).show()
                     finish()
                 } else {
-                    Toast.makeText(this@SignUpActivity, "회원가입 실패하셨습니다.", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@SignUpActivity, "회원가입 실패하셨습니다.", Toast.LENGTH_SHORT)
+                        .show()
                 }
             }
 
